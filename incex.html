@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div
+      class="flex justify-center w-4/5 xl:w-3/5 2xl:w-2/5 h-96 mt-20 lg:mt-40 lg:mt-60 mx-auto  relative "
+      id="cardContainer"
+    >
+      <div class="bg-blue-300 w-1/5 sm:w-1/3 ">
+        <div class="hexagon  -top-44 left-120 md:top-4 md:-left-36">
+          <div class="rect n-s"></div>
+          <div class="rect nw-se"></div>
+          <div class="border-demo-04"></div>
+          <div class="rect sw-ne"></div>
+          <div class="border-demo-042"></div>
+        </div>
+      </div>
+      <div
+        class="
+          bg-blue-100
+          w-3/5
+          justify-self-center
+          py-20
+          sm:py-24
+          px-1
+          sm:px-10
+          text-blue-500
+          font-serif
+        "
+      >
+        <div class="text-2xl lg:text-4xl font-normal pt-5">This is main page title</div>
+        <div class="truncate ... overflow-y-auto " id="resizingText">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est ipsum
+          numquam, dolor, atque deserunt quas ullam exercitationem dolores
+          assumenda, beatae officiis soluta eum sint optio ducimus non rem a
+          neque voluptate ipsam eligendi? Laboriosam fugit unde tempora itaque
+          nesciunt quam? Fuga impedit quis architecto delectus eum. Eius ex
+          dolorem odit ratione ullam, doloremque provident soluta delectus ipsa
+          illo nihil, doloribus, rerum illum molestias obcaecati tenetur placeat
+          suscipit porro iusto animi commodi sit! Assumenda qui ratione neque
+          eius nihil reiciendis accusamus.
+        </div>
+        <div class="mt-5">
+          <button
+            id="moreButton"
+            class="
+              text-blue-500
+              rounded
+              border-2 border-blue-300
+              text-xs
+              py-3
+              px-3
+              lg:w-20
+              xl:w-32
+              font-sans font-semibold
+            "
+          >
+            MORE
+          </button>
+          <button
+            data-modal-target="#modal"
+            class="
+              text-white
+              rounded
+              ml-1
+              md:ml-3
+              border-2 border-blue-500
+              bg-blue-500
+              text-xs
+              py-3
+              px-3
+              lg:w-20
+              xl:w-32
+              font-sans font-semibold
+            "
+          >
+            SHOW GALLERY
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal">
+      <div
+        class="bg-blue-300 h-1/5 w-full grid grid-rows-3 grid-flow-col gap-4"
+      >
+        <button
+          data-close-button
+          class="
+            close-button
+            bg-gray-50
+            rounded-full
+            h-8
+            w-8
+            flex
+            items-center
+            justify-center
+            text-xl
+            pb-1
+            text-blue-500
+            justify-self-end
+            mt-2
+            mr-2
+          "
+        >
+          &times;
+        </button>
+        <div class="text-blue-600 px-8">
+          <h1 class="font-bold">GALERRY IN MODAL</h1>
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 inline"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <div class="inline">piscum.photos</div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-blue-100 h-4/5 w-full">
+        <div class="grid grid-cols-10 py-16 m-auto">
+          <button
+            onclick="changePhoto('previous')"
+            class="
+              col-span-2
+              border-2 border-solid border-gray-400
+              rounded-md
+              bg-gray-50
+              h-14
+              my-auto
+              w-14
+              mx-auto
+              font-bold
+              text-gray-400
+              hover:border-blue-500 hover:text-blue-500
+            "
+          >
+            &lt;
+          </button>
+          <img src="" id="gallery" class="w-full m-auto col-span-6 max-h-72" />
+          <button
+            onclick="changePhoto('next')"
+            class="
+              col-span-2
+              border-2 border-solid border-gray-400
+              rounded-md
+              bg-gray-50
+              h-14
+              my-auto
+              w-14
+              mx-auto
+              font-bold
+              text-gray-400
+              hover:border-blue-500 hover:text-blue-500
+            "
+          >
+            &gt;
+          </button>
+        </div>
+        <div
+          class="
+            text-blue-600
+            border-4 border-opacity-25 border-blue-500
+            w-2/5
+            py-1
+            absolute
+            bottom-5
+            rounded
+            ml-4
+            px-2
+          "
+          id="authorsName"
+        >
+          Photo authors name
+        </div>
+      </div>
+    </div>
+    <div id="overlay"></div>
+    <footer
+      class="
+        bg-blue-500
+        grid grid-cols-4
+        justify-center
+        gap-4
+        md:gap-6
+        mx-auto
+        fixed
+        bottom-0
+        inset-x-0
+        w-full
+        h-1/5
+        text-white
+        pl-10
+        overflow-clip overflow-hidden
+      "
+    >
+      <div class="py-1 xl:py-12 text-sm">
+        <h1 class="py-3 lg:py-5">ABOUT YOU</h1>
+        Hi I'm Rysiek i'm about to be a developer :)
+      </div>
+      <div class="py-1 xl:py-12 text-sm max-w-80">
+        <h1 class="py-3 lg:py-5">DYMANIC PART</h1>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate reprehenderit officia saepe
+      </div>
+      <div class="py-1 xl:py-12 text-sm">
+        <h1 class="py-3 lg:py-5">CONTACT</h1>
+        harrtuck@gmail.com<br />
+
+        516348099
+      </div>
+      <div class="block justify-self-end py-10 px-10">
+        <a href="#" class="fa fa-facebook px-3"></a>
+        <a href="#" class="fa fa-twitter px-3"></a>
+        <a href="#" class="fa fa-instagram px-3"></a>
+      </div>
+    </footer>
+  </body>
+  <script src="script.js"></script>
+</html>
