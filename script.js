@@ -41,16 +41,18 @@ btn.addEventListener("click", (e) => {
 
 function showMoreText() {
   text.classList.remove("truncate");
-  cardContainer.classList.remove("mt-40");
+  cardContainer.classList.remove("mt-10");
+  cardContainer.classList.remove("lg:mt-40");
   cardContainer.classList.add("mt-20");
   cardContainer.classList.remove("h-96");
-  cardContainer.classList.add("h-278");
+  cardContainer.classList.add("h-3/5");
 }
 function showLessText() {
   text.classList.add("truncate");
   cardContainer.classList.remove("mt-20");
-  cardContainer.classList.add("mt-40");
-  cardContainer.classList.remove("h-278");
+  cardContainer.classList.add("mt-10");
+  cardContainer.classList.add("lg:mt-40");
+  cardContainer.classList.remove("h-3/5");
   cardContainer.classList.add("h-96");
 }
 
